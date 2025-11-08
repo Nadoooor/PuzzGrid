@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PuzzGrid</title>
+    <!-- A-frame -->
+            <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script> 
+            <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/gh/MozillaReality/ammo.js@8bbc0ea/builds/ammo.wasm.js"></script>
+            <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.js"></script>
+            <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
+
+    <!-- my scripts -->
+            <script src="grap.js"></script>
+</head>
+<body>
+<a-scene physics="debug: true; driver: ammo" background="color: #88c" stats >
+
+    <a-entity id="cameraRig" movement-controls>
+        <a-camera id="camera">
+            <a-entity cursor="fuse: false" geometry="primitive: circle; radius: 0.005" position="0 0 -0.5" raycaster="objects: .grappable"></a-entity>
+        </a-camera>
+    </a-entity>        
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="0 0 0"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="5 0 0"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="10 0 0"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="15 0 0"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="20 0 0"></a-entity>    
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="0 0 5"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="5 0 5"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="10 0 5"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="15 0 5"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="20 0 5"></a-entity>
+
+    <a-entity environment="preset: forest; groundColor: #445; skyColor: #88c;"></a-entity>    
+    
+    <a-box grap class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="0 1 0"></a-box>
+
+</a-scene>
+</body>
+</html>
