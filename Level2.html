@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level2(Coming-soon)</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script> 
+    <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MozillaReality/ammo.js@8bbc0ea/builds/ammo.wasm.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
+</head>
+<body>
+    <a-scene physics="debug: true; driver: ammo" background="color: #000000" stats>
+        <a-entity camera="" id="camera" position="9.988061385834559 2 8.478340306373575" look-controls="" wasd-controls="fly: false" rotation="-87.82276037850286 -180.13793078913102 0">
+            <a-entity cursor="" geometry="primitive: circle; radius: 0.005" position="0 0 -0.5" raycaster="objects: .grappable"></a-entity>
+    </a-entity>
+        <a-box color="red"></a-box>
+    <!-- floor -->
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="0 0 0"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box"
+    position="5 0 0"></a-entity>
+
+
+    </a-scene>
+</body>
+</html>

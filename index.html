@@ -16,11 +16,11 @@
             <script src="Places.js"></script>
 </head>
 <body>
-<a-scene obb-collider="showColliders: true" physics="debug: true; driver: ammo" background="color: #00ffd0" stats >
+<a-scene obb-collider="showColliders: false" physics="debug: false; driver: ammo" background="color: #00ffd0" stats >
     <!-- camera -->
-    <a-entity camera="" id="camera" position="9.988061385834559 22.329242660245253 8.478340306373575" look-controls="" wasd-controls="fly: true" rotation="-87.82276037850286 -180.13793078913102 0">
+    <a-entity camera="" id="camera" position="9.988061385834559 2 8.478340306373575" look-controls="" wasd-controls="fly: false" rotation="-87.82276037850286 -180.13793078913102 0">
             <a-entity cursor="" geometry="primitive: circle; radius: 0.005" position="0 0 -0.5" raycaster="objects: .grappable"></a-entity>
-        <a-image src="puzzle.png" position="2.5 1 -1.8" scale="0.8 0.8 0.8"></a-image>
+        <a-image src="Level1.png" position="2.5 1 -1.8" scale="0.8 0.8 0.8"></a-image>
     </a-entity>
     <!-- floor -->
     <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="0 0 0"></a-entity>
@@ -61,21 +61,19 @@
     <a-sky src="back.jpg"></a-sky>
 
     <!-- boxes -->
-    <a-box grap obb-collider id="here" class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="0 1 0"></a-box>
-    <a-box grap obb-collider class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="2 1 0"></a-box>
-    <a-box grap obb-collider class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="4 1 0"></a-box>
-    <a-box grap obb-collider class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="8 1 0"></a-box>
-    <a-box grap obb-collider class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="12 1 0"></a-box>
-
-    
-
+    <a-box grap obb-collider id="box1" class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="0 1 0"></a-box>
+    <a-box grap obb-collider id="box2" class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="2 1 0"></a-box>
+    <a-box grap obb-collider id="box3" class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="4 1 0"></a-box>
+    <a-box grap obb-collider id="box4" class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="8 1 0"></a-box>
+    <a-box grap obb-collider id="box5" class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="12 1 0"></a-box>
     <!-- boxes loc -->
-        <a-box correct="where: 1.09712 -0.13662 7.37296" obb-collider id="box1loc" color="red" position="1.09712 -0.13662 7.37296"></a-box>
-        <a-box correct="where: 8.81825 -0.13662 5" obb-collider id="box1loc" color="red" position="8.81825 -0.13662 5"></a-box>
-        <a-box correct="where: 14.94383 -0.13662 5" obb-collider id="box1loc" color="red" position="14.94383 -0.13662 5"></a-box>
-        <a-box correct="where: 8.70485 -0.13662 11.19805" obb-collider id="box1loc" color="red" position="8.70485 -0.13662 11.19805"></a-box>
-        <a-box correct="where: 1.21165 -0.13662 14.95851" obb-collider id="box1loc" color="red" position="1.21165 -0.13662 14.95851"></a-box>
 
+        <a-box correct="where: 1.09712 1 7.37296" obb-collider id="box1loc" material="alphaTest: 100" position="1.09712 0.5 7.37296"></a-box>
+        <a-box material="alphaTest: 100" correct="where: 8.81825 1 5" obb-collider id="box1loc" color="red" position="8.81825 0.5 5"></a-box>
+        <a-box material="alphaTest: 100" correct="where: 14.94383 1 5" obb-collider id="box1loc" color="red" position="14.94383 0.5 5"></a-box>
+        <a-box material="alphaTest: 100" correct="where: 8.70485 1 11.19805" obb-collider id="box1loc" color="red" position="8.70485 0.5 11.19805"></a-box>
+        <a-box material="alphaTest: 100" correct="where: 1.21165 1 14.95851" obb-collider id="box1loc" color="red" position="1.21165 0.5 14.95851"></a-box>
+        <a-cone color="red" scale="3 3 3" position="10 3 23" ammo-body="type: static" ammo-shape="type: cone"></a-cone>
 
 </a-scene>
 </body>
