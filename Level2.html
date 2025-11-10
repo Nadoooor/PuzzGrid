@@ -9,19 +9,56 @@
     <script src="https://cdn.jsdelivr.net/gh/MozillaReality/ammo.js@8bbc0ea/builds/ammo.wasm.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
+    <!-- my scripts -->
+     <script src="grap.js"></script>
+        <script src="Places.js"></script>
 </head>
 <body>
-    <a-scene physics="debug: true; driver: ammo" background="color: #000000" stats>
-        <a-entity camera="" id="camera" position="9.988061385834559 2 8.478340306373575" look-controls="" wasd-controls="fly: false" rotation="-87.82276037850286 -180.13793078913102 0">
+    <a-scene obb-collider="showColliders: true" physics="debug: true; driver: ammo" background="color: #000000" stats>
+        <a-entity camera="" id="camera" position="9.988061385834559 2 8.478340306373575" look-controls="" wasd-controls="fly: true" rotation="-87.82276037850286 -180.13793078913102 0">
             <a-entity cursor="" geometry="primitive: circle; radius: 0.005" position="0 0 -0.5" raycaster="objects: .grappable"></a-entity>
+            <a-image src="Level2.png" position="2.5 1 -1.8" scale="0.8 0.8 0.8"></a-image>
     </a-entity>
-        <a-box color="red"></a-box>
     <!-- floor -->
+
     <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="0 0 0"></a-entity>
-    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box"
-    position="5 0 0"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="0 0 5"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="0 0 10"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="0 0 15"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="5 0 0"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="5 0 5"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="5 0 10"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="5 0 15"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="10 0 0"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="10 0 5"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="10 0 10"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="10 0 15"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="15 0 0"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="15 0 5"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="15 0 10"></a-entity>
+    <a-entity ammo-body="type: static" ammo-shape="type: box" material="src: grid.png" scale="5 0.5 5" geometry="primitive: box" position="15 0 15"></a-entity>
 
+    <!-- Walls -->
 
+    <a-box scale="1 4 20" position="-3 2 7.5"></a-box>
+    <a-box scale="1 4 20" position="18 2 7.5"></a-box>
+    <a-box scale="21 4 1" position="7 2 18"></a-box>
+    <a-box scale="21 4 1" position="7 2 -3"></a-box>
+
+    <!-- Boxes -->
+    <a-box grap obb-collider id="box1" class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="2 1 2"></a-box>
+    <a-box grap obb-collider id="box2" class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="2 1 4"></a-box>
+    <a-box grap obb-collider id="box3" class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="2 1 6"></a-box>
+    <a-box grap obb-collider id="box4" class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="2 1 8 "></a-box>
+    <a-box grap obb-collider id="box5" class="grappable" ammo-body="type: dynamic" ammo-shape="type: box" position="2 1 10 "></a-box>
+
+     <!-- Boxes loc -->
+      <a-box correct="where: 0 1 0;to: 3" obb-collider position="0 0.5 0" material="alphaTest: 100" ></a-box>
+      <a-box correct="where: 0 1 6;to: 3" obb-collider position="0 0.5 6" material="alphaTest: 100" ></a-box>
+      <a-box correct="where: 5 1 13;to: 3" obb-collider position="5 0.5 13" material="alphaTest: 100" ></a-box>
+      <a-box correct="where: 8 1 9;to: 3" obb-collider position="8 0.5 9" material="alphaTest: 100" ></a-box>
+      <a-box correct="where: 1 1 15;to: 3" obb-collider position="1 0.5 15" material="alphaTest: 100" ></a-box>
+      <a-cone color="red" ammo-body="type: static" ammo-shape="type: cone" position="18 2.5 8" scale="3 3 3"></a-cone>
     </a-scene>
 </body>
 </html>

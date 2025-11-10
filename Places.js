@@ -1,6 +1,7 @@
 AFRAME.registerComponent('correct', {
     schema: {
-        where: { type: 'vec3', default: { x: 0, y: 0, z: 0 } }
+        where: { type: 'vec3', default: { x: 0, y: 0, z: 0 } },
+        to: { type: 'int', default: 2 }
     },
 
     init: function () {
@@ -56,7 +57,7 @@ AFRAME.registerComponent('correct', {
         if (this.box1 != null && this.box2 != null && this.box3 != null && this.box4 != null && this.box5 != null && i < 1) {
             console.log("All boxes are in correct positions! Loading Level 2.");
             i++;
-            window.location.href = "Level2.html"; 
+            window.location.href = "Level" + this.data.to + ".html"; 
         }
     }
 });
